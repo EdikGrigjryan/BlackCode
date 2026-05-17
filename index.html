@@ -1,13 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-	<link rel="stylesheet" href="scripts/script.js">
-</head>
-<body>
-	
-	<script src="/scripts/script.js"></script>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="/styles/style.css" />
+	</head>
+	<body>
+		<header class="header">
+			<div class="header__container">
+				<div class="header__logo__div">
+					<a href><img class="header__logo" src="/icons/logo.png" alt="Logo" /></a>
+				</div>
+				<ul class="menu">
+
+					<li class="dropdown">
+						<a href="#" class="menu__link">Skills ▼</a>
+
+						<ul class="dropdown__menu">
+							<li><a href="#">HTML</a></li>
+							<li><a href="#">CSS</a></li>
+							<li><a href="#">JavaScript</a></li>
+							<li><a href="#">More...</a></li>
+						</ul>
+					</li>
+					<li class="menu__list"><a href class="menu__link">about me</a></li>
+					<li class="dropdown">
+						<a href="#" class="menu__link">Development plan ▼</a>
+
+						<ul class="dropdown__menu">
+
+							<li><a href="#">Development stages</a></li>
+							<li><a href="#">More...</a></li>
+							<li><a href="#">More Info</a></li>
+						</ul>
+					</li>
+				</ul>
+				<div class="header__btn">
+					<a href>Contact</a>
+
+					<div class="header__btn__shader"></div>
+
+				</div>
+			</div>
+		</header>
+		<main class="main"></main>
+		<footer class="footer">
+			<div class="footer__container"></div>
+		</footer>
+		<script src="/scripts/script.js"></script>
+	</body>
 </html>
