@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact</title>
+  <link rel="stylesheet" href="./styles/contact.css">
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+
+<body>
+  <main>
+    <section class="contact" id="contact">
+      <div class="contact__container">
+        <div class="contact__info">
+          <span>CONTACT</span>
+          <h2>Свяжись со мной</h2>
+          <p>
+            Есть проект, вопрос или предложение?
+            Напиши мне через форму, и я постараюсь ответить как можно скорее.
+          </p>
+
+          <div class="contact__email">
+            <span>Email</span>
+            <a href="mailto:edikgrigoryan19@gmail.com">
+              edikgrigoryan19@gmail.com
+            </a>
+          </div>
+        </div>
+
+        <form class="contact__form" id="contact-form">
+          <div class="contact__input">
+            <label for="name">Имя</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Введите ваше имя"
+              required
+            >
+          </div>
+
+          <div class="contact__input">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Введите ваш email"
+              required
+            >
+          </div>
+
+          <div class="contact__input">
+            <label for="message">Сообщение</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Напишите ваше сообщение..."
+              rows="6"
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="contact__button">
+            Отправить сообщение
+          </button>
+
+          <p id="form-status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    emailjs.init({
+      publicKey: "n_4agp8AEOvQ001vh"
+    });
+
+    document.getElementById("contact-form").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const status = document.getElementById("form-status");
+      const button = document.querySelector(".contact__button");
+
+      button.disabled = true;
+      button.textContent = "Отправка...";
+
+      emailjs.sendForm(
+        "service_w15yg3f",
+        "template_rbmi2dc",
+        this
+      )
+        .then(() => {
+          status.textContent = "Сообщение успешно отправлено ✓";
+          this.reset();
+
+          button.disabled = false;
+          button.textContent = "Отправить сообщение";
+        })
+        .catch((error) => {
+          console.error(error);
+
+          status.textContent = "Ошибка отправки. Попробуйте ещё раз.";
+
+          button.disabled = false;
+          button.textContent = "Отправить сообщение";
+        });
+    });
+  </script>
+</body>
+</html>

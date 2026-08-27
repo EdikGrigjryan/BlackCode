@@ -17,6 +17,9 @@
   list-style: none;
   text-decoration: none;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 [class*="__container"] {
   max-width: 1260px;
