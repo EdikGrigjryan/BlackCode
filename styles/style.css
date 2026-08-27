@@ -22,15 +22,7 @@
   max-width: 1260px;
   margin: 0 auto;
 }
-body{
-	background: linear-gradient(
-    90deg,
-    rgba(2, 0, 36, 1) 28%,
-    rgba(9, 9, 121, 1) 100%,
-    rgba(0, 212, 255, 1) 100%
-  );
-	
-}
+
 /* header styles */
 
 .header {
